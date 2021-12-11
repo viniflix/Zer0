@@ -1,10 +1,10 @@
 <?php
 session_start();
-include_once("../../../bd/conexao.php");
+include_once("../../bd/conexao.php");
 
 $cliente = filter_input(INPUT_POST, 'cliente', FILTER_SANITIZE_STRING);
-$endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_TEXT);
-$tel = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_INT);
+$endereco = filter_input(INPUT_POST, 'endereco', FILTER_SANITIZE_STRING);
+$tel = filter_input(INPUT_POST, 'tel', FILTER_SANITIZE_NUMBER_FLOAT);
 $email = filter_input(INPUT_POST, 'email', FILTER_SANITIZE_EMAIL);
 
 

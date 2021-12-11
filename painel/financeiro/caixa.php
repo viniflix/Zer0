@@ -136,13 +136,13 @@ $result = $conexao->query($sql);
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="../financeiro/caixa.php" class="nav-link">
+                <a href="./financeiro/caixa.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Caixa</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="../financeiro/Procedimentos.php" class="nav-link">
+                <a href="./financeiro/Procedimentos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Procedimentos</p>
                 </a>

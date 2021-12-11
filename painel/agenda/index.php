@@ -1,38 +1,23 @@
 <?php
-include('../bd/verifica_login.php');
-include_once('../bd/conexao.php');
+include('../../bd/verifica_login.php');
 
 ?>
 
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Zer0 | Painel</title>
+  <title>Zer0 | Agenda</title>
 
   <!-- Google Font: Source Sans Pro -->
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
   <!-- Font Awesome -->
-  <link rel="stylesheet" href="plugins/fontawesome-free/css/all.min.css">
-  <!-- Ionicons -->
-  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-  <!-- Tempusdominus Bootstrap 4 -->
-  <link rel="stylesheet" href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css">
-  <!-- iCheck -->
-  <link rel="stylesheet" href="plugins/icheck-bootstrap/icheck-bootstrap.min.css">
-  <!-- JQVMap -->
-  <link rel="stylesheet" href="plugins/jqvmap/jqvmap.min.css">
-  <!-- Theme style -->
-  <link rel="stylesheet" href="dist/css/adminlte.min.css">
-  <!-- overlayScrollbars -->
-  <link rel="stylesheet" href="plugins/overlayScrollbars/css/OverlayScrollbars.min.css">
-  <!-- Daterange picker -->
-  <link rel="stylesheet" href="plugins/daterangepicker/daterangepicker.css">
-  <!-- summernote -->
-  <link rel="stylesheet" href="plugins/summernote/summernote-bs4.min.css">
+  <link rel="stylesheet" href="../plugins/fontawesome-free/css/all.min.css">
   <!-- fullCalendar -->
-  <link rel="stylesheet" href="plugins/fullcalendar/main.css">
+  <link rel="stylesheet" href="../plugins/fullcalendar/main.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../dist/css/adminlte.min.css">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
 <!-- Site wrapper -->
@@ -45,7 +30,7 @@ include_once('../bd/conexao.php');
         <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="./index.php" class="nav-link">Inicio</a>
+        <a href="../" class="nav-link">Inicio</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="https://api.whatsapp.com/send?phone=5584994490147&text=Estou%20tendo%20problemas%20com%20o%20meu%20painel,%20e%20gostaria%20de%20pedir%20ajuda." class="nav-link">Suporte</a>
@@ -73,7 +58,7 @@ include_once('../bd/conexao.php');
       <!-- Sidebar user (optional) -->
       <div class="user-panel mt-3 pb-3 mb-3 d-flex">
         <div class="image">
-          <img src="./dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
+          <img src="../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
           <p style="color:white" class="d-block"><?php echo $_SESSION['usuario'];?> <a href="../bd/logout.php" style="margin-left: 15px;">Sair</a></p>
@@ -99,7 +84,7 @@ include_once('../bd/conexao.php');
                with font-awesome or any other icon font library -->
           <li class="nav-header">PAINEL</li>
           <li class="nav-item">
-            <a href="#" class="nav-link active">
+            <a href="../" class="nav-link">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
                 Dashboard
@@ -108,7 +93,7 @@ include_once('../bd/conexao.php');
           </li>
           
           <li class="nav-item">
-            <a href="./clientes/index.php" class="nav-link">
+            <a href="../clientes/index.php" class="nav-link">
               <i class="nav-icon fas fa-edit"></i> 
               <p>
                 Clientes
@@ -117,7 +102,7 @@ include_once('../bd/conexao.php');
           </li>
 
           <li class="nav-item">
-            <a href="./agenda/" class="nav-link">
+            <a href="#" class="nav-link active">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
                 Agenda
@@ -134,13 +119,13 @@ include_once('../bd/conexao.php');
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="./financeiro/caixa.php" class="nav-link">
+                <a href="../financeiro/caixa.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Caixa</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="./financeiro/procedimentos.php" class="nav-link">
+                <a href="../financeiro/Procedimentos.php" class="nav-link">
                   <i class="far fa-circle nav-icon"></i>
                   <p>Procedimentos</p>
                 </a>
@@ -173,146 +158,79 @@ include_once('../bd/conexao.php');
     </section>
 
     <!-- Main content -->
-
     <section class="content">
       <div class="container-fluid">
-      	<!-- Small boxes (Stat box) -->
         <div class="row">
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-secondary">
-              <div class="inner">
-                <h3>
-                  8
-                </h3>
+          <div class="col-md-3">
+            <div class="sticky-top mb-3">
+              <!-- /.card -->
+              <div class="card card-info">
+                <div class="card-header">
+                  <h3 class="card-title ">Criar Evento</h3>
+                </div>
+                <div class="card-body">
+                  <div class="btn-group" style="width: 100%; margin-bottom: 10px;">
+                    <ul class="fc-color-picker" id="color-chooser">
+                      <li><a class="text-primary" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-warning" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-success" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-danger" href="#"><i class="fas fa-square"></i></a></li>
+                      <li><a class="text-info" href="#"><i class="fas fa-square"></i></a></li>
+                    </ul>
+                  </div>
+                  <!-- /btn-group -->
+                  <div class="input-group ">
+                    <input id="new-event" type="text" class="form-control" placeholder="Nome do evento">
 
-                <p>Clientes cadastrados</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-person-add"></i>
-              </div>
-              <a href="./clientes/" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-info">
-              <div class="inner">
-                <h3>5</h3>
-
-                <p>Eventos marcados</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-calendar-alt"></i>
-              </div>
-              <a href="./agenda/" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-success">
-              <div class="inner">
-                <h3>0<sup style="font-size: 20px; margin-left:10px;"><i class="fas fa-caret-up"></i></sup></h3>
-
-                <p>Lucro total</p>
-              </div>
-              <div class="icon">
-                <i class="fas fa-wallet"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-          <div class="col-lg-3 col-6">
-            <!-- small box -->
-            <div class="small-box bg-danger">
-              <div class="inner">
-                <h3>0<sup style="font-size: 20px; margin-left:10px;"><i class="fas fa-caret-down"></i></sup></h3>
-
-                <p>Despesas</p>
-              </div>
-              <div class="icon">
-                <i class="ion ion-pie-graph"></i>
-              </div>
-              <a href="#" class="small-box-footer">Ver mais <i class="fas fa-arrow-circle-right"></i></a>
-            </div>
-          </div>
-          <!-- ./col -->
-        </div>
-        <!-- /.row -->
-
-        <div class="row">
-        	<!-- Left col -->
-          <section class="col-lg-7 connectedSortable">
-          	<!-- Default box -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Agenda de hoje</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                    <div class="input-group-append">
+                      <button id="add-new-event" type="button" class="btn btn-primary">Adicionar</button>
+                    </div>
+                    <!-- /btn-group -->
+                  </div>
+                  <!-- /input-group -->
                 </div>
               </div>
 
-              <div class="card-body">
+              <div class="card card-secondary">
+                <div class="card-header">
+                  <h4 class="card-title">Eventos</h4>
+                </div>
+                <div class="card-body">
+                  <!-- the events -->
+                  <div id="external-events">
+                    <div class="external-event bg-success">Teste 1</div>
+                    <div class="external-event bg-warning">Teste 2</div>
+                    <div class="external-event bg-info">Teste 3</div>
+                    <div class="external-event bg-primary">Teste 4</div>
+                    <div class="external-event bg-danger">Teste 5</div>
+                    <div class="checkbox">
+                      <label for="drop-remove">
+                        <input type="checkbox" id="drop-remove">
+                        remover após alocar
+                      </label>
+                    </div>
+                  </div>
+                </div>
+                <!-- /.card-body -->
+              </div>
+              
+            </div>
+          </div>
+          <!-- /.col -->
+          <div class="col-md-9">
+            <div class="card card-primary">
+              <div class="card-body p-0">
                 <!-- THE CALENDAR -->
                 <div id="calendar"></div>
               </div>
               <!-- /.card-body -->
-              
-              <!-- /.card-footer-->
             </div>
             <!-- /.card -->
-          </section>
-
-          <section class="col-lg-5 connectedSortable">
-          	<!-- Default box -->
-            <div class="card card-primary">
-              <div class="card-header">
-                <h3 class="card-title">Resumo semanal</h3>
-
-                <div class="card-tools">
-                  <button type="button" class="btn btn-tool" data-card-widget="collapse" title="Collapse">
-                    <i class="fas fa-minus"></i>
-                  </button>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove" title="Remove">
-                    <i class="fas fa-times"></i>
-                  </button>
-                </div>
-              </div>
-              <div class="card-body">
-                <img src="https://miro.medium.com/max/595/1*1hbWqXXpmt4haUhI4JdjbA.jpeg">
-              </div>
-              <!-- /.card-body -->
-              <div class="card-footer">
-                *grafico procedimentos realizados
-              </div>
-              <!-- /.card-footer-->
-            </div>
-            <!-- /.card -->
-          </section>
-
-          
-          <div class="col-12">
-            
-
-
-
-
-            
-
           </div>
+          <!-- /.col -->
         </div>
-      </div>
+        <!-- /.row -->
+      </div><!-- /.container-fluid -->
     </section>
     <!-- /.content -->
   </div>
@@ -334,20 +252,17 @@ include_once('../bd/conexao.php');
 <!-- ./wrapper -->
 
 <!-- jQuery -->
-<script src="./plugins/jquery/jquery.min.js"></script>
-<!-- Bootstrap 4 -->
-<script src="./plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-<!-- overlayScrollbars -->
-<script src="./plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
+<script src="../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap -->
+<script src="../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- jQuery UI -->
+<script src="../plugins/jquery-ui/jquery-ui.min.js"></script>
 <!-- AdminLTE App -->
-<script src="./dist/js/adminlte.min.js"></script>
+<script src="../dist/js/adminlte.min.js"></script>
 <!-- fullCalendar 2.2.5 -->
-<script src="./plugins/moment/moment.min.js"></script>
-<script src="./plugins/fullcalendar/main.js"></script>
-<script src='./plugins/fullcalendar/locales/pt-br.js'></script>
-
-
-
+<script src="../plugins/moment/moment.min.js"></script>
+<script src="../plugins/fullcalendar/main.js"></script>
+<script src='../plugins/fullcalendar/locales/pt-br.js'></script>
 <!-- Page specific script -->
 <script>
   $(function () {
@@ -389,19 +304,36 @@ include_once('../bd/conexao.php');
         y    = date.getFullYear()
 
     var Calendar = FullCalendar.Calendar;
+    var Draggable = FullCalendar.Draggable;
 
+    var containerEl = document.getElementById('external-events');
+    var checkbox = document.getElementById('drop-remove');
     var calendarEl = document.getElementById('calendar');
 
     // initialize the external events
     // -----------------------------------------------------------------
 
-    
+    new Draggable(containerEl, {
+      itemSelector: '.external-event',
+      eventData: function(eventEl) {
+        return {
+          title: eventEl.innerText,
+          backgroundColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+          borderColor: window.getComputedStyle( eventEl ,null).getPropertyValue('background-color'),
+          textColor: window.getComputedStyle( eventEl ,null).getPropertyValue('color'),
+        };
+      }
+    });
 
     var calendar = new Calendar(calendarEl, {
+      headerToolbar: {
+        left  : 'prev,next today',
+        center: 'title',
+        right : 'dayGridMonth,timeGridWeek,timeGridDay'
+      },
       themeSystem: 'bootstrap',
       locale:'pt-br',
-      events: '',
-      initialView: 'timeGridDay',
+      events: 'list_eventos.php',
 
       editable  : true,
       droppable : true, // this allows things to be dropped onto the calendar !!!
@@ -417,10 +349,45 @@ include_once('../bd/conexao.php');
     calendar.render();
     // $('#calendar').fullCalendar()
 
-    
+    /* ADDING EVENTS */
+    var currColor = '#3c8dbc' //Red by default
+    // Color chooser button
+    $('#color-chooser > li > a').click(function (e) {
+      e.preventDefault()
+      // Save color
+      currColor = $(this).css('color')
+      // Add color effect to button
+      $('#add-new-event').css({
+        'background-color': currColor,
+        'border-color'    : currColor
+      })
+    })
+    $('#add-new-event').click(function (e) {
+      e.preventDefault()
+      // Get value and make sure it is not null
+      var val = $('#new-event').val()
+      if (val.length == 0) {
+        return
+      }
+
+      // Create events
+      var event = $('<div />')
+      event.css({
+        'background-color': currColor,
+        'border-color'    : currColor,
+        'color'           : '#fff'
+      }).addClass('external-event')
+      event.text(val)
+      $('#external-events').prepend(event)
+
+      // Add draggable funtionality
+      ini_events(event)
+
+      // Remove event from text input
+      $('#new-event').val('')
+    })
   })
 </script>
-
 
 </body>
 </html>
